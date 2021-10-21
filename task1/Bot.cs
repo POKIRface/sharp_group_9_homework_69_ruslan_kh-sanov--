@@ -32,7 +32,19 @@ namespace task1
             {
                 Message message = messageEventArgs.Message;
                 Console.WriteLine(message.Text);
-                await _bot.SendTextMessageAsync(message.Chat.Id, message.Text);
+                switch(message.Text)
+                {
+                    case"/start":
+                        await _bot.SendTextMessageAsync(message.Chat.Id, "Победитель определяется по следующим правилам:Бумага побеждает камень(«бумага обёртывает камень»).Камень побеждает ножницы(«камень затупляет или ломает ножницы»).Ножницы побеждают бумагу(«ножницы разрезают бумагу»).\n/help-Правила игры \n/game-начало игры");
+                        break ;
+                    case "/help":
+                        await _bot.SendTextMessageAsync(message.Chat.Id, "Победитель определяется по следующим правилам:Бумага побеждает камень(«бумага обёртывает камень»).Камень побеждает ножницы(«камень затупляет или ломает ножницы»).Ножницы побеждают бумагу(«ножницы разрезают бумагу»).");
+                        break;
+                    case "/game":
+                        await _bot.SendTextMessageAsync(message.Chat.Id, "Победитель определяется по следующим правилам:Бумага побеждает камень(«бумага обёртывает камень»).Камень побеждает ножницы(«камень затупляет или ломает ножницы»).Ножницы побеждают бумагу(«ножницы разрезают бумагу»).\n/help-Правила игры \n/game-начало игры");
+                        break;
+                }
+                await _bot.SendTextMessageAsync(message.Chat.Id, "Не ну ты выдал");
             }
             catch (Exception e)
             {
