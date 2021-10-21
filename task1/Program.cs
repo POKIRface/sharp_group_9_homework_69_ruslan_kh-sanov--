@@ -6,7 +6,8 @@ namespace task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Bot bot = new Bot("2073949071:AAEq-gWy4UAJo6I_jUIncuPOvVFhN7eN9FY");
+            bot.StartBot();
         }
     }
 }
